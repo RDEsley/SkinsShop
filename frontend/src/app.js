@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'; // Mudança aqui
-import { AuthProvider, useAuth } from '../context';
+import { AuthProvider, useAuth } from './context';
 import Login from './components/login';
-import ItemList from './components/itemlist';
+import ItemList from './components/ItemList';
 import AddItem from './components/additem';
-import EditItem from './components/edititem';
+import EditItem from './components/EditItem';
 import PrivateRoute from './components/PrivateRoute';
+
 
 function App() {
   const { auth } = useAuth(); // Usando o contexto para verificar se o usuário está autenticado

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getSkins, editSkin } from '../api';
 
-const edititem = () => {
+const EditItem = () => {
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
   const [imagem, setImagem] = useState('');
@@ -10,7 +10,6 @@ const edititem = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    // Buscar os dados da skin com base no id
     const fetchSkin = async () => {
       try {
         const response = await getSkins();
@@ -21,7 +20,7 @@ const edititem = () => {
           setImagem(skin.imagem);
         }
       } catch (error) {
-        console.log('Erro ao buscar skin:', error);
+        console.error('Erro ao buscar skin:', error);
       }
     };
 
@@ -34,9 +33,9 @@ const edititem = () => {
 
     try {
       await editSkin(id, updatedSkin);
-      navigate('/items'); // Redireciona para a lista de itens após editar
+      navigate('/items');
     } catch (error) {
-      console.log('Erro ao editar skin:', error);
+      console.error('Erro ao editar skin:', error);
     }
   };
 
@@ -68,4 +67,4 @@ const edititem = () => {
   );
 };
 
-export default edititem;
+export default EditItem;

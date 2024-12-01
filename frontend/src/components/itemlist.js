@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { getSkins, deleteSkin } from '../api';
 import { Link } from 'react-router-dom';
 
-const itemlist = () => {
+const ItemList = () => {
   const [skins, setSkins] = useState([]);
 
   useEffect(() => {
-    // Carregar as skins quando o componente for montado
     const fetchSkins = async () => {
       try {
         const response = await getSkins();
         setSkins(response.data);
       } catch (error) {
-        console.log('Erro ao buscar skins:', error);
+        console.error('Erro ao buscar skins:', error);
       }
     };
 
@@ -22,9 +21,9 @@ const itemlist = () => {
   const handleDelete = async (id) => {
     try {
       await deleteSkin(id);
-      setSkins(skins.filter((skin) => skin._id !== id)); // Remover a skin da lista após a exclusão
+      setSkins(skins.filter((skin) => skin._id !== id));
     } catch (error) {
-      console.log('Erro ao deletar skin:', error);
+      console.error('Erro ao deletar skin:', error);
     }
   };
 
@@ -46,4 +45,4 @@ const itemlist = () => {
   );
 };
 
-export default itemlist;
+export default ItemList;
