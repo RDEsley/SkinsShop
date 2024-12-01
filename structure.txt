@@ -1,0 +1,23 @@
+crud-login/
+│
+├── backend/
+│   ├── models/            # Modelos do MongoDB (Admin, Skin)
+│   ├── routes/            # Rotas da API
+│   ├── .env               # Configurações sensíveis (ex.: URI MongoDB)
+│   ├── server.js          # Entrada principal do servidor Node.js
+│   ├── package.json       # Dependências do back-end
+│   └── README.md          # Instruções para o back-end
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # Componentes reutilizáveis (Ex.: Form, Navbar)
+│   │   ├── pages/         # Páginas principais (Ex.: Login, Dashboard)
+│   │   ├── services/      # Arquivos para chamadas API (Ex.: Axios setup)
+│   │   ├── App.js         # Componente raiz
+│   │   ├── index.js       # Entrada do React
+│   │   └── styles/        # Estilos globais ou específicos
+│   ├── public/            # Arquivos estáticos (HTML, imagens)
+│   ├── package.json       # Dependências do front-end
+│   └── README.md          # Instruções para o front-end
+│
+└── README.md              # Documentação geral do projeto
